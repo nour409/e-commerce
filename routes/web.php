@@ -16,4 +16,4 @@ use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [WelcomeController::class,'index']);
 Route::get('/about', [WelcomeController::class,'about']);
-Route::get('/services', [WelcomeController::class,'services']);
+Route::get('/services/{name}/{id}', [WelcomeController::class,'services']);

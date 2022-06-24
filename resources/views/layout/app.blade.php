@@ -18,15 +18,15 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Services</a></li>
-            <!--<ul class="nav navbar-nav navbar-right">
+            </ul>
+             <!--<ul class="nav navbar-nav navbar-right">
                 <li><a href="#">New product</a></li>
             </ul>-->
         </div>
     </nav>
 
     <div class="container">
-
-        <h1>Welcome to the services page my name {{ $name }} id: {{ $id }}</h1>
+@yield('content')
 
     </div>
 

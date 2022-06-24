@@ -12,7 +12,7 @@ class WelcomeController extends Controller
     function about(){
         return view('about');
     }
-    function services(){
-        return view('services');
+    function services($name,$id){
+        return view('services',compact('name','id'));
     }
 }
