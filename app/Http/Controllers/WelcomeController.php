@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Product;
 class WelcomeController extends Controller
 {
     function index(){
@@ -13,6 +13,11 @@ class WelcomeController extends Controller
         return view('about');
     }
     function services($name,$id){
-        return view('services',compact('name','id'));
+        $data=Product::all();
+        return view('services',compact('data'));
+    }
+    function show($id){
+        $data=Product::find($id);
+        return view('item',compact('data'));
     }
 }
