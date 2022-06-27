@@ -20,4 +20,22 @@ class WelcomeController extends Controller
         $data=Product::find($id);
         return view('item',compact('data'));
     }
+
+    function create(){
+      
+        return view('create');
+    }
+    function createPost(Request $request){
+      $Prouduct =new Product();
+
+ 
+        $Prouduct->product_name = $request->Proudct_Name;
+        $Prouduct->product_price = $request->Proudct_description;
+        $Prouduct->product_description = $request->Proudct_price;
+ 
+        $Prouduct->save();
+        $data=Product::all();
+        return view('services',compact('data'));
+  
+    }
 }

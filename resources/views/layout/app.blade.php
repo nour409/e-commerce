@@ -14,14 +14,14 @@
        
             
             <ul class="nav">
-                <li><a href="/" =>Home</a></li>
+                <li><a href="/" >Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/services/nour/2"   >Services</a></li>
                 <li><a href={{ URL::to("/services/nour/") }}>Services</a></li>
             </ul>
-             <!--<ul class="nav navbar-nav navbar-right">
-                <li><a href="#">New product</a></li>
-            </ul>-->
+             <ul class="nav navbar-nav navbar-right "style="margin:0px padding:0px">
+                <li><a href={{URL::to("/create") }}>New product</a></li>
+   </ul>        
     
     </nav>
    

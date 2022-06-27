@@ -18,3 +18,5 @@ Route::get('/', [WelcomeController::class,'index']);
 Route::get('/about', [WelcomeController::class,'about']);
 Route::get('/services/{name}/{id}', [WelcomeController::class,'services']);
 Route::get('/show/{id}', [WelcomeController::class,'show']);
+Route::get('/create', [WelcomeController::class,'create']);
+Route::post('/createPost', [WelcomeController::class,'createPost']);
