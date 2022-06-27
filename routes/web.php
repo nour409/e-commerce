@@ -20,3 +20,8 @@ Route::get('/services/{name}/{id}', [WelcomeController::class,'services']);
 Route::get('/show/{id}', [WelcomeController::class,'show']);
 Route::get('/create', [WelcomeController::class,'create']);
 Route::post('/createPost', [WelcomeController::class,'createPost']);
+
+Route::get('/edit/{id}', [WelcomeController::class,'edit']);
+
+Route::post('/editProduct', [WelcomeController::class,'editProduct']);
+Route::get('/delete/{id}', [WelcomeController::class,'delete']);

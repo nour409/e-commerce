@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Session;
 class WelcomeController extends Controller
 {
     function index(){
@@ -34,8 +35,38 @@ class WelcomeController extends Controller
         $Prouduct->product_description = $request->Proudct_price;
  
         $Prouduct->save();
-        $data=Product::all();
-        return view('services',compact('data'));
+      Session::put("massage","your prouduct is added");
+        return redirect('create');
   
+    }
+
+    function edit($id){
+        
+        $data=Product::find($id);
+
+        return view("edit",compact("data")); 
+    }
+
+    function editProduct(Request $request){
+        $Prouduct=Product::find($request->id);
+
+        $Prouduct->product_name = $request->Proudct_Name;
+        $Prouduct->product_price =   $request->Proudct_price;
+        $Prouduct->product_description =$request->Proudct_description;
+      
+        $Prouduct->update();
+      Session::put("massage","your prouduct is updated");
+      $data=$Prouduct;
+      return redirect()->back();
+  
+    }
+
+
+    function delete($id){
+        
+        $data=Product::find($id);
+        $data->delete();
+        Session::put("massage","your prouduct is deleted");
+        return redirect()->back();
     }
 }
